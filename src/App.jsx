@@ -15,8 +15,7 @@ import {
 import { initializeApp } from 'firebase/app';
 import { 
   getAuth, 
-  signInWithEmailAndPassword, 
-  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
   signOut, 
   onAuthStateChanged,
   sendPasswordResetEmail 
@@ -403,8 +402,8 @@ const AuthPage = ({ darkMode }) => {
     setMessage({ type: '', text: '' });
     
     try {
-      if (isSignUp) {
-        await createUserWithEmailAndPassword(auth, email, password);
+      if (isSgnUp) {
+        await createUserhEmailAndPassword(auth, email, password);
         setMessage({ type: 'success', text: 'Account created successfully!' });
       } else {
         await signInWithEmailAndPassword(auth, email, password);
@@ -449,7 +448,7 @@ const AuthPage = ({ darkMode }) => {
                </div>
                <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100">Property Tracker</h1>
                <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">
-                 {isSignUp ? 'Create Account' : 'Secure Login'}
+                 {isSnUp ? 'Create Account' : 'Secure Login'}
                </p>
            </div>
            
